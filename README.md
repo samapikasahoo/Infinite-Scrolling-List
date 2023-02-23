@@ -4,6 +4,8 @@
 # Infinite Scrolling Contact List
 This is a web application built using React that displays an infinite scrolling list of contacts. The contacts are loaded dynamically from an external API as the user scrolls down the list.
 
+## Live Demo
+https://main.ducmehjtdustj.amplifyapp.com/
 ## Table of Contents
 
 - [Infinite Scrolling Contact List](#infinite-scrolling-contact-list)
