@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Spinner } from "react-bootstrap";
 
-const CONTACT_LIST_PER_PAGE = 100; // Number of items to load at a time when we make API Call.
+const CONTACT_LIST_PER_PAGE = 25; // Number of items to load at a time when we make API Call.
 const API_URL = "https://randomuser.me/api/?results=500"; // This is the API endpoint where we are getting the data.
 
 export const ContactList = () => {
@@ -24,7 +24,8 @@ export const ContactList = () => {
   //This function is called when the onScroll event triggered.
   const handleScroll = () => {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
-    if (scrollTop + clientHeight >= scrollHeight - 10 && !loading) {
+    const diff = scrollHeight - scrollTop - clientHeight;
+    if (diff < 50 && !loading) {
       setPage((prevPage) => prevPage + 1); // Increment page number
     }
   };
